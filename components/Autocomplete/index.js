@@ -171,6 +171,7 @@ class Autocomplete extends Component {
       placeholderColor,
       data,
       disableFullscreenUI,
+      inputTestID,
       ...dropdownProps
     } = this.props;
 
@@ -196,6 +197,7 @@ class Autocomplete extends Component {
                 scrollToInput(findNodeHandle(event.target));
               }
             }}
+            testID={inputTestID}
           />
           {loading && (
             <ActivityIndicator
