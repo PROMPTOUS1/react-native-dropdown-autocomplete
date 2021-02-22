@@ -493,7 +493,7 @@ export default class Dropdown extends PureComponent {
     const itemData = itemCount ? data : [NO_DATA];
 
     return (
-      <View onLayout={this.onLayout} style={containerStyle}>
+      <View onLayout={this.onLayout} style={[containerStyle, (modal ? {height: 200} : {})]}>
         {modal && (
           <View style={[styles.picker, pickerStyle, pickerStyleOverrides]}>
             <FlatList
