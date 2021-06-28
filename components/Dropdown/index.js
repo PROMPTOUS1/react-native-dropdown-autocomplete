@@ -7,6 +7,7 @@ import {
   FlatList,
   Text,
   ViewPropTypes,
+  TouchableOpacity
 } from "react-native";
 import PropTypes from "prop-types";
 import Ripple from "react-native-material-ripple";
@@ -449,16 +450,18 @@ export default class Dropdown extends PureComponent {
   }
 
   renderHeader() {
-    const {listHeader, listHeaderStyle, listHeaderTextStyle} = this.props;
+    const {listHeader, listHeaderStyle, listHeaderTextStyle, listHeaderOnPress} = this.props;
 
     return listHeader ? (
       <View style={[styles.listItem, styles.listHeader, listHeaderStyle]}>
-        <Text
-          style={[styles.listHeaderText, listHeaderTextStyle]}
-          key={listHeader}
-        >
-          {listHeader.toUpperCase()}
-        </Text>
+        <TouchableOpacity onPress={() => listHeaderOnPress()}>
+          <Text
+            style={[styles.listHeaderText, listHeaderTextStyle]}
+            key={listHeader}
+          >
+            {listHeader.toUpperCase()}
+          </Text>
+        </TouchableOpacity>
       </View>
     ) : null;
   }
