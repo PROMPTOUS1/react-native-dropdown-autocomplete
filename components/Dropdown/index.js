@@ -336,7 +336,7 @@ export default class Dropdown extends PureComponent {
     const {noDataText, noDataTextStyle} = this.props;
 
     return (
-      <DropdownItem index={0} style={{paddingLeft: 15}}>
+      <DropdownItem index={0} style={{paddingLeft: 15, paddingVertical: 15}}>
         <Text style={[styles.listItemText, styles.noData, noDataTextStyle]}>
           {noDataText}
         </Text>
