@@ -66,7 +66,7 @@ class Autocomplete extends Component {
       try {
         const response = await fetchData(inputValue);
         if (response.length && this.mounted) {
-          this.setState({items: response, loading: false});
+          this.setState({filteredItems: response, loading: false});
         } else {
           this.setState({items: [NO_DATA], loading: false});
         }
