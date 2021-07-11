@@ -207,7 +207,7 @@ class Autocomplete extends Component {
             />
           )}
         </View>
-        {items && items.length > 0 && (
+        {(inputValue.length === 0 || (items && items.length > 0)) && (
           <Dropdown
             ref={this.dropdown}
             dropdownPosition={0}
