@@ -476,7 +476,7 @@ export default class Dropdown extends PureComponent {
       ...props
     } = this.props;
 
-    const {data, itemPadding} = props;
+    const {data, itemPadding, inputValue} = props;
 
     const {left, top, width, modal} = this.state;
 
@@ -497,7 +497,7 @@ export default class Dropdown extends PureComponent {
 
     return (
       <View onLayout={this.onLayout} style={[containerStyle, (modal ? {height: 200} : {})]}>
-        {modal && (
+        {(modal && inputValue.length > 0) && (
           <View style={[styles.picker, pickerStyle, pickerStyleOverrides]}>
             <FlatList
               keyboardShouldPersistTaps="always"
